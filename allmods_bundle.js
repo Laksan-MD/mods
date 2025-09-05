@@ -1,90 +1,49 @@
-// allmods_bundle.js
-// Loads almost every Sandboxels mod except Tools/Settings + alchemy.js + moreMachanics.js
+// allmods_fullbundle.js
+// Loads EVERY Sandboxels mod except Tools & Settings
 
 const mods = [
-  // Chemistry & Science
-  "chem.js",
-  "aScientistsWish.js",
-  "morechemistry.js",
-  "nousersthings.js",
-  "spring.js",
-  "biology.js",
-  "mixture.js",
-  "moreliquids.js",
-  "halogen.js",
-  "noblegas.js",
-  "radioactive.js",
-  "liquid_mixing.js",
+  // --- Chemistry & Science ---
+  "chem.js","morechemistry.js","aScientistsWish.js","nousersthings.js","spring.js",
+  "biology.js","mixture.js","moreliquids.js","halogen.js","noblegas.js",
+  "radioactive.js","liquid_mixing.js","alchemy.js",
 
-  // Machines & Mechanics
-  // removed moreMachanics.js
-  "logicgates.js",
-  "circuitcore.js",
-  "ExtraMachines.js",
-  "fans.js",
-  "drill.js",
-  "combustion.js",
-  "conveyance.js",
-  "pullers.js",
-  "pushers.js",
-  "portal.js",
-  "spouts.js",
-  "waterspout.js",
-  "WhisperingTheory.js",
+  // --- Mechanics & Machines ---
+  "logicgates.js","circuitcore.js","ExtraMachines.js","fans.js","drill.js",
+  "combustion.js","conveyance.js","pullers.js","pushers.js","portal.js",
+  "spouts.js","waterspout.js","WhisperingTheory.js","gears.js","pulleys.js",
 
-  // Food & Cooking
-  "aChefsDream.js",
-  "aChefsDream2.js",
-  "morefoodsmod.js",
-  "soups.js",
-  "mustard.js",
-  "pizzasstuff.js",
-  "weAllScreamFor.js",
+  // --- Food & Cooking ---
+  "aChefsDream.js","aChefsDream2.js","morefoodsmod.js","soups.js",
+  "mustard.js","pizzasstuff.js","weAllScreamFor.js","community_desserts.js",
+  "ketchup_mod.js",
 
-  // Weapons
-  "weapons.js",
-  "aircrafts.js",
-  "guided_rocket.js",
-  "icb.js",
-  "life_eater.js",
-  "war_crimes.js",
+  // --- Weapons ---
+  "weapons.js","aircrafts.js","guided_rocket.js","icb.js",
+  "life_eater.js","war_crimes.js","explosives.js","tanks.js",
 
-  // Life & Nature
-  "fey_and_more.js",
-  "fantastic_creatures.js",
-  "flowers_and_forests.js",
-  "plants.js",
-  "moretrees.js",
-  "ocean.js",
-  "volcanic_expansion.js",
+  // --- Nature & Fantasy ---
+  "fey_and_more.js","fantastic_creatures.js","flowers_and_forests.js",
+  "plants.js","moretrees.js","ocean.js","volcanic_expansion.js","sbstuff.js",
 
-  // Fun & Games
-  "minecraft.js",
-  "star_wars.js",
-  "sports_beta.js",
-  "doom.js",
-  "maze.js",
+  // --- Fun & Games ---
+  "minecraft.js","star_wars.js","sports_beta.js","doom.js","maze.js","sus.js",
 
-  // Visual
-  "clouds.js",
-  "sky.js",
-  "lightmap.js",
-  "nicer_flame.js",
-  "occlusion.js",
-  "moreViews.js",
-  "manyMoreThemes.js",
+  // --- Visual ---
+  "clouds.js","sky.js","lightmap.js","nicer_flame.js","occlusion.js",
+  "moreViews.js","manyMoreThemes.js","glow.js",
 
-  // Playground expanding mods (screen/worldgen)
-  "worldgenlibrary.js",
-  "the_ground.js",
-  "the_ground_og.js",
-  "building.js",
-  "citybuilding.js",
-  "worldgen_test.js",
+  // --- Playground expanders ---
+  "worldgenlibrary.js","the_ground.js","the_ground_og.js",
+  "building.js","citybuilding.js","worldgen_test.js",
 ];
 
 mods.forEach(mod => {
-  let s = document.createElement("script");
-  s.src = "mods/" + mod; // assumes mods are in your /mods/ folder
-  document.head.appendChild(s);
+  try {
+    let s = document.createElement("script");
+    s.src = "mods/" + mod;
+    s.onerror = () => console.warn("❌ Failed to load:", mod);
+    document.head.appendChild(s);
+  } catch(e) {
+    console.error("⚠️ Error in mod:", mod, e);
+  }
 });
