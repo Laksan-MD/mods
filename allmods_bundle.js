@@ -1,5 +1,5 @@
-// allmods_fullbundle.js
-// Loads EVERY Sandboxels mod except Tools & Settings
+// allmods_everything.js
+// Loads EVERY Sandboxels mod, including Tools & Settings
 
 const mods = [
   // --- Chemistry & Science ---
@@ -11,6 +11,7 @@ const mods = [
   "logicgates.js","circuitcore.js","ExtraMachines.js","fans.js","drill.js",
   "combustion.js","conveyance.js","pullers.js","pushers.js","portal.js",
   "spouts.js","waterspout.js","WhisperingTheory.js","gears.js","pulleys.js",
+  "moreMachanics.js",
 
   // --- Food & Cooking ---
   "aChefsDream.js","aChefsDream2.js","morefoodsmod.js","soups.js",
@@ -35,6 +36,12 @@ const mods = [
   // --- Playground expanders ---
   "worldgenlibrary.js","the_ground.js","the_ground_og.js",
   "building.js","citybuilding.js","worldgen_test.js",
+
+  // --- Tools ---
+  "no_scroll.js","fast_reload.js","debugtools.js",
+
+  // --- Settings ---
+  "settings.js","sandbox_settings.js",
 ];
 
 mods.forEach(mod => {
