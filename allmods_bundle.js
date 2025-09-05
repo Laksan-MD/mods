@@ -5,7 +5,7 @@ const mods = [
   // --- Chemistry & Science ---
   "chem.js","morechemistry.js","aScientistsWish.js","nousersthings.js","spring.js",
   "biology.js","mixture.js","moreliquids.js","halogen.js","noblegas.js",
-  "radioactive.js","liquid_mixing.js","alchemy.js",
+  "radioactive.js","liquid_mixing.js",
 
   // --- Mechanics & Machines ---
   "logicgates.js","circuitcore.js","ExtraMachines.js","fans.js","drill.js",
